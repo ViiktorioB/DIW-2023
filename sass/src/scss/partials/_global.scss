@@ -1,0 +1,139 @@
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*p {
+  @include prefix(text-align, justify);
+  @include prefix(padding, 0);
+  @include prefix(margin, 0);
+  @include prefix(font-size, 1em);
+}
+*/
+
+p {
+  text-align: justify;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+p:not([class]) {
+  color: $normal-color;
+  background-color: lighten($normal-color, 50%);
+}
+
+h4:not([class]) {
+  color: $normal-color;
+  background-color: lighten($normal-color, 50%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: justify;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid black;
+  }
+}
+
+img {
+  border-radius: 45%;
+  width: 300px;
+}
+.grayscale {
+  filter: grayscale(100%);
+  transition: filter 3s;
+}
+
+.blur {
+  filter: blur(5px);
+  transition: filter 3s;
+}
+
+.sepia {
+  filter: sepia(100%);
+  transition: filter 3s;
+}
+
+.invert {
+  filter: invert(0.8);
+}
+
+.hue-rotate {
+  filter: hue-rotate(150deg);
+}
+
+.contrast {
+  filter: contrast(2);
+}
+
+$factor: 25.5;
+@for $i from 0 through 10 {
+  @for $j from 0 through 10 {
+    @for $k from 0 through 10 {
+      $rojo: round($i * 10);
+      $verde: round($j * 10);
+      $azul: round($k * 10);
+
+      $r: ($rojo * 1%);
+      $g: ($verde * 1%);
+      $b: ($azul * 1%);
+
+      .color-#{$rojo}-#{$verde}-#{$azul} {
+        color: rgb($r, $g, $b);
+      }
+
+      .colorbg-#{$rojo}-#{$verde}-#{$azul} {
+        background-color: rgb($r, $g, $b);
+      }
+    }
+  }
+}
+
+@for $i from 1 through $total-columns {
+  .col_#{$i} {
+    width: calc(100% / $total-columns * $i);
+    float: left;
+  }
+}

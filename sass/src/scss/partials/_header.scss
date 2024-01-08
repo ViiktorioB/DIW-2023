@@ -1,0 +1,28 @@
+header{
+    font-size: 48px;
+    background-color:#e63946;
+    width: 100%;
+    height: 100px;
+    text-align: left;
+}
+
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+  }
+
+.success {
+  color: $success-color;
+  background-color: darken($success-color, 25%);
+}
+
+.warning {
+  color: $warning-color;
+  background-color: darken($warning-color, 25%);
+}
+
+.error {
+  color: $error-color;
+  background-color: darken($error-color, 25%);
+}

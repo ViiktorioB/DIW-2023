@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ColoredProgressBar = require('colored-progress-bar-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -20,6 +21,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html', 
       filename: 'index.html', 
+    }),
+    new ColoredProgressBar({
+   
     }),
   ],
   module: {
